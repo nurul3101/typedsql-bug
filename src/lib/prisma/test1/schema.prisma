@@ -1,0 +1,15 @@
+generator client {
+    provider        = "prisma-client-js"
+    output          = "../generated/test1"
+    previewFeatures = ["typedSql"]
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL_TEST1")
+}
+
+model Test1User {
+    id   Int    @id @default(autoincrement()) @db.Integer
+    name String @db.VarChar(32)
+}
